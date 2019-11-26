@@ -7,8 +7,7 @@
 <title>Studenckie Mieszkanie v0.1</title>
 <link href="css/bootstrap.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
-<link rel="shortcut icon" href="/FlatMates/img/rental.ico"
-	type="image/x-icon" />
+<link rel="shortcut icon" href="/FlatMates/img/rental.ico" type="image/x-icon" />
 </head>
 <div id="wrap">
 	<body>
@@ -57,7 +56,9 @@
 					%>
 					<div class="alert alert-warning" role="alert">Wylogowano
 						poprawnie!</div>
-					}		%>
+					<%
+						}
+					%>
 
 
 					<form method="post" action="LoginCheck">
