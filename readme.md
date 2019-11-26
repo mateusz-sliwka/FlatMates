@@ -5,6 +5,6 @@ Prosta aplikaca webowa wykonana w technologii JSP z użyciem Maven, Hibernate, B
 
 ## Plan rozwoju
 
-* **Listopad 2019 ** - zaimplementowanie serwletów jako jedynej metody obsługi formularza, zwiększenie bezpieczeństwa (obecnie niskiego)
-* **Grudzień 2019 ** - stworzenie tożsamej aplikacji w Springu, zestawienie różnić JSP i Spring
+* ** Listopad 2019 ** - zaimplementowanie serwletów jako jedynej metody obsługi formularza, zwiększenie bezpieczeństwa (obecnie niskiego)
+* ** Grudzień 2019 ** - stworzenie tożsamej aplikacji w Springu, zestawienie różnić JSP i Spring
 
