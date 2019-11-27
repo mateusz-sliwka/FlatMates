@@ -29,6 +29,7 @@
 		} else
 			session.setAttribute("logged-in", "true");
 		System.out.println(redirection);
+		flatmate_id = usersDao.getIdByLogin((String) session.getAttribute("login"));
 		if (redirection) {
 			RequestDispatcher dd = request.getRequestDispatcher(destination);
 			dd.forward(request, response);
@@ -99,7 +100,7 @@
 						else
 							request.setAttribute("infoBox","Nie masz praw do zarządzania tym rekordem!");
 					} else if ("select".equals(action)) {
-						if(dao.selectOne(Integer.parseInt(id)).getFlatmate_id()==flatmate_id){
+						if(flatmate_id==dao.selectOne(Integer.parseInt(id)).getFlatmate_id()){
 						app = dao.selectOne(Integer.parseInt(id));
 						yourcosts = dao.countFlatmateCosts(flatmate_id);
 						allcosts = dao.countCosts();}
