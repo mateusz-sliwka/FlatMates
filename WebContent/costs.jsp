@@ -91,16 +91,23 @@
 						}
 
 					} else if ("remove".equals(action)) {
+						if(dao.selectOne(Integer.parseInt(id)).getFlatmate_id()==flatmate_id){
 						dao.remove(Integer.parseInt(id));
 						yourcosts = dao.countFlatmateCosts(flatmate_id);
 						request.setAttribute("infoBox", "Usunięto koszt!");
-						allcosts = dao.countCosts();
+						allcosts = dao.countCosts();}
+						else
+							request.setAttribute("infoBox","Nie masz praw do zarządzania tym rekordem!");
 					} else if ("select".equals(action)) {
+						if(dao.selectOne(Integer.parseInt(id)).getFlatmate_id()==flatmate_id){
 						app = dao.selectOne(Integer.parseInt(id));
 						yourcosts = dao.countFlatmateCosts(flatmate_id);
-						allcosts = dao.countCosts();
+						allcosts = dao.countCosts();}
+						else
+							request.setAttribute("infoBox","Nie masz praw do zarządzania tym rekordem!");
 
 					} else if ("update".equals(action)) {
+						if(dao.selectOne(Integer.parseInt(id)).getFlatmate_id()==flatmate_id){
 						try {
 							double price2 = Double.parseDouble(price);
 							app = new Cost(name, price2, flatmate_id);
@@ -111,7 +118,9 @@
 							allcosts = dao.countCosts();
 						} catch (NumberFormatException e) {
 							request.setAttribute("infoBox", "Podano nieprawidłową cenę!");
-						}
+						}}
+						else
+							request.setAttribute("infoBox","Nie masz praw do zarządzania tym rekordem!");
 
 					}
 					List<Cost> costs = dao.selectAll();
