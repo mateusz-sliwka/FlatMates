@@ -48,15 +48,13 @@ public class LoginCheck extends HttpServlet {
 		UsersDao usersDao = new UsersDao();
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
-		System.out.println(login);
-		System.out.println(password);
-
+	
 		if (usersDao.loginUser(login, password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("login", login);
 			response.sendRedirect("costs.jsp");
 		} else {
-			request.setAttribute("errorMessage", "Z³y login lub has³o!");
+			request.setAttribute("errorMessage", "Zï¿½y login lub hasï¿½o!");
 
 			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			rd.forward(request, response);

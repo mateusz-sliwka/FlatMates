@@ -22,13 +22,13 @@
 			destination = "index.jsp";
 		} else
 			flatmate_id = usersDao.getIdByLogin((String) session.getAttribute("login"));
-		System.out.println(flatmate_id);
+	
 		if (flatmate_id == -1) {
 			redirection = true;
 			destination = "index.jsp";
 		} else
 			session.setAttribute("logged-in", "true");
-		System.out.println(redirection);
+	
 		flatmate_id = usersDao.getIdByLogin((String) session.getAttribute("login"));
 		if (redirection) {
 			RequestDispatcher dd = request.getRequestDispatcher(destination);
@@ -78,7 +78,7 @@
 					if ("create".equals(action)) {
 
 						try {
-							System.out.println(Double.parseDouble(price));
+					
 							double price2 = Double.parseDouble(price);
 
 							app = new Cost(name, price2, flatmate_id);
